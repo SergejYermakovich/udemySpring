@@ -9,7 +9,7 @@ public class AnnotationBeanScopeDemoApp {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("appContext.xml");
 
-        Coach coach = context.getBean("tennisCoach", Coach.class);
+        TennisCoach coach = context.getBean("tennisCoach", TennisCoach.class);
 
         System.out.println(coach.getFortune());
         System.out.println(coach.getTraining());
