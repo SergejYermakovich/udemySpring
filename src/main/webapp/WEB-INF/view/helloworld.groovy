@@ -2,12 +2,13 @@ yieldUnescaped '<!DOCTYPE html>'
 html(lang: 'en') {
     head {
         meta('http-equiv': '"Content-Type" content="text/html; charset=utf-8"')
-        title('My page')
+        title('Hello world !!!')
     }
     body {
-        img(src: "resources/images/spring.png")
-        p("Hello !!! ")
+        p("Hello world of spring !!!")
         newLine()
-        a(href: 'showForm', "Hello world form")
+        p("Student name: ${model.studentName}")
+        newLine()
+        p("message: ${model.greeting}")
     }
 }

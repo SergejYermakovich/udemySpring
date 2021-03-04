@@ -30,6 +30,7 @@
 	<!-- Configure the Groovy Markup Template Engine... -->
 	<mvc:groovy-configurer resource-loader-path="/WEB-INF/view/"/>
 
+	<mvc:resources mapping="/resources/**" location="/resources/"/>
 </beans>
 
 
