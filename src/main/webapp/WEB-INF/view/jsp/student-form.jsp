@@ -10,6 +10,11 @@
 <form:form action="processStudentForm" modelAttribute="student" >
     <form:input path="firstName" type="text" placeholder="What s your firstName?"/>
     <form:input path="lastName" type="text" placeholder="What s your lastName?"/>
+
+    <form:select path="country">
+        <form:options items="${countryOptions}"/>
+    </form:select>
+
     <input type="submit" value="Submit query"/>
 </form:form>
 

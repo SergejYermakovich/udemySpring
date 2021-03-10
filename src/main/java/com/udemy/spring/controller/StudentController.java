@@ -1,36 +1,39 @@
 package com.udemy.spring.controller;
 
 import com.udemy.spring.entity.Student;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Map;
 
 @Controller
 @RequestMapping("/student")
 public class StudentController {
 
+    @Value("#{countryOptions}")
+    private Map<String, String> countryOptions;
+
     @RequestMapping({"/showForm"})
     public String showForm(Model model) {
-        System.out.println("showForm");
-
         Student student = new Student();
-        model.addAttribute("student" , student);
+        model.addAttribute("student", student);
+        model.addAttribute("countryOptions", countryOptions);
 
-        return "student-form";//student-form
+        return "student-form";
     }
 
     @RequestMapping({"/processStudentForm"})
-    public String processStudentForm(@ModelAttribute("student") Student student) {
+    public String processStudentForm(@ModelAttribute("student") Student student, Model model) {
+        model.addAttribute("student", student);
 
-        System.out.println("processStudentForm");
-        System.out.println(student.getFirstName());
-        System.out.println(student.getLastName());
+        // log the input data
+        System.out.println("student:  " + student.getFirstName() + " " + student.getLastName());
 
         return "student-confirmation";
     }
-
 
 
 }

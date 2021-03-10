@@ -5,9 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 </head>
 <body>
-<img src="${pageContext.request.contextPath}/resources/images/spring.png">
+<img src="${pageContext.request.contextPath}/resources/images/spring.png"/>
 <p>Hello!!!!</p>
 <br>
 <a href="showForm">Hello world form</a>
+<br>
+<a href="student/showForm">student -> showForm</a>
 </body>
 </html>
