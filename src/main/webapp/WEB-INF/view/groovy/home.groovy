@@ -6,7 +6,7 @@ html(lang: 'en') {
     }
     body {
         img(src: "resources/images/spring.png")
-        p("Hello !!! ")
+        p("Hello !!!")
         newLine()
         a(href: 'showForm', "Hello world form")
     }
