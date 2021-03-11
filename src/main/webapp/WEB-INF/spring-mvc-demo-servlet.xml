@@ -36,6 +36,7 @@
 	<mvc:resources mapping="/resources/**" location="/resources/"/>
 
 	<util:properties  id="countryOptions" location="classpath:../countries.properties" />
+	<util:properties  id="favouriteLanguages" location="classpath:../languages.properties" />
 </beans>
 
 

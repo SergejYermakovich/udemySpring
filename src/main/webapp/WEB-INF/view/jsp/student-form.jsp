@@ -7,14 +7,23 @@
 </head>
 <body>
 
-<form:form action="processStudentForm" modelAttribute="student" >
+<form:form action="processStudentForm" modelAttribute="student">
+    <br><br>
     <form:input path="firstName" type="text" placeholder="What s your firstName?"/>
+    <br><br>
     <form:input path="lastName" type="text" placeholder="What s your lastName?"/>
-
+    <br><br>
     <form:select path="country">
         <form:options items="${countryOptions}"/>
     </form:select>
-
+    <br><br>
+    <form:radiobuttons items="${favouriteLanguages}" path="favouriteLanguage"/>
+    <br><br>
+    Operating systems:
+    Linux<form:checkbox path="operatingSystems" value="Linux"/>
+    Windows<form:checkbox path="operatingSystems" value="Windows"/>
+    MacOS<form:checkbox path="operatingSystems" value="MacOS"/>
+    <br><br>
     <input type="submit" value="Submit query"/>
 </form:form>
 
