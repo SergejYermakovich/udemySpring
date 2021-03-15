@@ -4,20 +4,34 @@ import com.udemy.spring.entity.Student;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/student")
 public class StudentController {
 
-    @Value("#{countryOptions}")
-    private Map<String, String> countryOptions;
+    //    @Value("#{countryOptions}")
+    static Map<String, String> countryOptions = new HashMap<>();
 
-    @Value("#{favouriteLanguages}")
-    private Map<String, String> favouriteLanguages;
+    //    @Value("#{favouriteLanguages}")
+    static Map<String, String> favouriteLanguages = new HashMap<>();
+
+    static {
+        countryOptions.put("BR","Brazil");
+        countryOptions.put("FR","France");
+        countryOptions.put("DE","Germany");
+        countryOptions.put("US","USA");
+
+        favouriteLanguages.put("Java","Java");
+        favouriteLanguages.put("C++","C++");
+        favouriteLanguages.put("Python","Python");
+    }
 
     @RequestMapping({"/showForm"})
     public String showForm(Model model) {
@@ -30,9 +44,10 @@ public class StudentController {
     }
 
     @RequestMapping({"/processStudentForm"})
-    public String processStudentForm(@ModelAttribute("student") Student student, Model model) {
-        model.addAttribute("student", student);
-
+    public String processStudentForm(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "student-form";
+        }
         // log the input data
         System.out.println("student:  " + student.getFirstName() + " " + student.getLastName());
 

@@ -1,11 +1,17 @@
 package com.udemy.spring.entity;
 
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 public class Student {
 
+    @NotNull
+    @Size(min = 2)
     private String firstName;
+
+    @NotNull
+    @Size(min = 2)
     private String lastName;
     private String country;
     private String favouriteLanguage;

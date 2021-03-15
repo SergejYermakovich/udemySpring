@@ -4,14 +4,19 @@
 <head>
     <title>My page !!!</title>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <style>
+        .error {
+            color:red;
+        }
+    </style>
 </head>
 <body>
 
 <form:form action="processStudentForm" modelAttribute="student">
     <br><br>
-    <form:input path="firstName" type="text" placeholder="What s your firstName?"/>
+    <form:input path="firstName"   placeholder="What s your firstName?"/>
     <br><br>
-    <form:input path="lastName" type="text" placeholder="What s your lastName?"/>
+    <form:input path="lastName"   placeholder="What s your lastName?"/>
     <br><br>
     <form:select path="country">
         <form:options items="${countryOptions}"/>
