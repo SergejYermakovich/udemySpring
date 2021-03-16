@@ -1,12 +1,13 @@
 package com.udemy.spring.factory;
 
+import org.springframework.stereotype.Service;
+
 import java.util.*;
 
+@Service
 public class Main {
 
     //    5 6 7 8 32 5 6
-
-
     public static int count(int[] array, int targetSum) {
         int quantityOfCounts = 0;
         Set<Integer> set = new HashSet<>();
