@@ -8,5 +8,7 @@ ${customer.firstName}
 <br>
 <br>
 ${customer.lastName}
+<br>
+${customer.freePasses}
 </body>
 </html>
