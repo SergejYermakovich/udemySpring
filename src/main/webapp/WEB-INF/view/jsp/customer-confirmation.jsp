@@ -1,16 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Customer</title>
+    <title>Customer confirm</title>
 </head>
 <body>
-${customer.firstName}
+Firstname: ${customer.firstName}
 <br>
 <br>
-${customer.lastName}
+Lastname: ${customer.lastName}
 <br>
-${customer.freePasses}
+Free passes: ${customer.freePasses}
 <br>
-${customer.postalCode}
+Postal code: ${customer.postalCode}
+<br>
+Course code: ${customer.courseCode}
 </body>
 </html>

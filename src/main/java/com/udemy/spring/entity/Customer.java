@@ -1,5 +1,6 @@
 package com.udemy.spring.entity;
 
+import com.udemy.spring.annotation.CourseCode;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.*;
@@ -22,6 +23,9 @@ public class Customer {
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
+
+    @CourseCode(value = "PIDOR" , message = "must starts with PIDOR")
+    private String courseCode;
 
     public String getFirstName() {
         return firstName;
@@ -53,5 +57,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
