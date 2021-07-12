@@ -1,4 +1,4 @@
-package cm.udemy.hibernate.demo;
+package cm.udemy.hibernate.demo.oneToOne;
 
 import cm.udemy.hibernate.entity.instructor.Instructor;
 import cm.udemy.hibernate.entity.instructor.InstructorDetail;
