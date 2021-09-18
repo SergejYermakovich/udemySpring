@@ -1,9 +1,10 @@
 package com.udemy.spring.entity;
 
 import com.udemy.spring.annotation.CourseCode;
+import jakarta.validation.constraints.*;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.*;
+
 
 @Component
 public class Customer {

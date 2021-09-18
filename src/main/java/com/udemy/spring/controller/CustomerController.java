@@ -1,6 +1,7 @@
 package com.udemy.spring.controller;
 
 import com.udemy.spring.entity.Customer;
+import jakarta.validation.Valid;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
+
 
 @Controller
 @RequestMapping("/customer")
